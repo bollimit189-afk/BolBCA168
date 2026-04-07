@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>មេរៀន - BizCreate Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Kantumruy Pro', sans-serif; }
+        /* បន្ថែមស្ទីលសម្រាប់ប៊ូតុង Play ឱ្យមើលទៅដូច YouTube ដើម */
+        .play-button {
+            transition: all 0.3s ease;
+            background: rgba(255, 0, 0, 0.9);
+        }
+        .video-container:hover .play-button {
+            background: #ff0000;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <nav class="bg-blue-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold font-mono tracking-widest">BizCreate</h1>
+            
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html" class="text-yellow-400 font-medium">ទំព័រដើម</a>
+                <a href="about.html" class="text-gray-300 hover:text-blue-400 transition font-medium">អំពីយើង</a>
+                <a href="courses.html" class="text-gray-300 hover:text-blue-400 transition font-medium">វគ្គសិក្សា</a>
+                <a href="team.html" class="text-gray-300 hover:text-blue-400 transition font-medium">ក្រុមការងារ</a>
+                <a href="lessons.html" class="text-gray-300 hover:text-blue-400 transition font-medium">មេរៀន</a>
+                <a href="register.html" class="bg-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-500 transition shadow-lg">
+                    ចុះឈ្មោះសិក្សា
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none p-1">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden flex flex-col space-y-4 px-4 pt-4 pb-6 border-t border-blue-800 mt-4 bg-blue-900">
+            <a href="index.html" class="text-yellow-400">ទំព័រដើម</a>
+            <a href="about.html" class="text-gray-300">អំពីយើង</a>
+            <a href="courses.html" class="text-gray-300">វគ្គសិក្សា</a>
+            <a href="team.html" class="text-gray-300">ក្រុមការងារ</a>
+            <a href="lessons.html" class="text-gray-300">មេរៀន</a>
+            <a href="register.html" class="bg-blue-600 text-center py-2 rounded-lg font-bold">ចុះឈ្មោះសិក្សា</a>
+        </div>
+    </nav>
+
+    <header class="bg-white border-b py-8 md:py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold text-blue-900 mb-2 italic">បណ្ណាល័យវីដេអូមេរៀន</h2>
+            <p class="text-gray-500 text-sm md:text-base italic px-4">ពង្រឹងសមត្ថភាពរបស់អ្នកជាមួយមេរៀនដែលបង្រៀនដោយក្រុមការងារ BizCreate</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-10 md:py-16 px-4 flex-grow">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-xl group">
+                <div class="aspect-video bg-black relative video-container cursor-pointer" 
+                     onclick="loadVideo(this, 'uatC-Y7HYKI')">
+                    <img src="https://img.youtube.com/vi/uatC-Y7HYKI/maxresdefault.jpg" class="w-full h-full object-cover opacity-80" alt="Lesson 1">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="play-button w-14 h-10 rounded-xl flex items-center justify-center shadow-2xl">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 018.53 1.28l8.132 4.047a1.5 1.5 0 010 2.673l-8.132 4.047a1.5 1.5 0 01-2.23-1.332V2.841z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <span class="text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-wider">Web Development</span>
+                    <h3 class="font-bold text-base md:text-lg text-gray-800 mt-1">មេរៀនទី ១៖ មូលដ្ឋានគ្រឹះ HTML5</h3>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-xl group">
+                <div class="aspect-video bg-black relative video-container cursor-pointer" 
+                     onclick="loadVideo(this, 'bxmDnn7lrnk')">
+                    <img src="https://img.youtube.com/vi/bxmDnn7lrnk/maxresdefault.jpg" class="w-full h-full object-cover opacity-80" alt="Lesson 2">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="play-button w-14 h-10 rounded-xl flex items-center justify-center shadow-2xl">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 018.53 1.28l8.132 4.047a1.5 1.5 0 010 2.673l-8.132 4.047a1.5 1.5 0 01-2.23-1.332V2.841z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <span class="text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-wider">Web Design</span>
+                    <h3 class="font-bold text-base md:text-lg text-gray-800 mt-1">មេរៀនទី ២៖ ការប្រើប្រាស់ CSS & Tailwind</h3>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-xl group">
+                <div class="aspect-video bg-black relative video-container cursor-pointer" 
+                     onclick="loadVideo(this, 'QhlpJ5lHPyk')">
+                    <img src="https://img.youtube.com/vi/QhlpJ5lHPyk/maxresdefault.jpg" class="w-full h-full object-cover opacity-80" alt="Lesson 3">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="play-button w-14 h-10 rounded-xl flex items-center justify-center shadow-2xl">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 018.53 1.28l8.132 4.047a1.5 1.5 0 010 2.673l-8.132 4.047a1.5 1.5 0 01-2.23-1.332V2.841z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <span class="text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-wider">Programming</span>
+                    <h3 class="font-bold text-base md:text-lg text-gray-800 mt-1">មេរៀនទី ៣៖ មូលដ្ឋានគ្រឹះ C++</h3>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-xl group">
+                <div class="aspect-video bg-black relative video-container cursor-pointer" 
+                     onclick="loadVideo(this, 'e3IbUVlCfM8')">
+                    <img src="https://img.youtube.com/vi/e3IbUVlCfM8/maxresdefault.jpg" class="w-full h-full object-cover opacity-80" alt="Lesson 4">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="play-button w-14 h-10 rounded-xl flex items-center justify-center shadow-2xl">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 018.53 1.28l8.132 4.047a1.5 1.5 0 010 2.673l-8.132 4.047a1.5 1.5 0 01-2.23-1.332V2.841z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <span class="text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-wider">UI/UX Design</span>
+                    <h3 class="font-bold text-base md:text-lg text-gray-800 mt-1">មេរៀនទី ៤៖ ការឌីហ្សាញជាមួយ Figma</h3>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-xl group">
+                <div class="aspect-video bg-black relative video-container cursor-pointer" 
+                     onclick="loadVideo(this, 'Nx8SpXPYd7c')">
+                    <img src="https://img.youtube.com/vi/Nx8SpXPYd7c/maxresdefault.jpg" class="w-full h-full object-cover opacity-80" alt="Lesson 5">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="play-button w-14 h-10 rounded-xl flex items-center justify-center shadow-2xl">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 018.53 1.28l8.132 4.047a1.5 1.5 0 010 2.673l-8.132 4.047a1.5 1.5 0 01-2.23-1.332V2.841z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <span class="text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-wider">Content Writing</span>
+                    <h3 class="font-bold text-base md:text-lg text-gray-800 mt-1">មេរៀនទី ៥៖ តិចនិកសរសេរ Content</h3>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-xl group">
+                <div class="aspect-video bg-black relative video-container cursor-pointer" 
+                     onclick="loadVideo(this, 'Kw50uCnrAmY')">
+                    <img src="https://img.youtube.com/vi/Kw50uCnrAmY/maxresdefault.jpg" class="w-full h-full object-cover opacity-80" alt="Lesson 6">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="play-button w-14 h-10 rounded-xl flex items-center justify-center shadow-2xl">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 018.53 1.28l8.132 4.047a1.5 1.5 0 010 2.673l-8.132 4.047a1.5 1.5 0 01-2.23-1.332V2.841z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <span class="text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-wider">Poster Design</span>
+                    <h3 class="font-bold text-base md:text-lg text-gray-800 mt-1">មេរៀនទី ៦៖ ការរចនា Poster ផ្សព្វផ្សាយ</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-8 md:py-10 text-center mt-auto">
+        <div class="container mx-auto px-4">
+            <p class="mb-2 font-bold">BizCreate Academy</p>
+            <p class="text-xs md:text-sm opacity-70">© 2026 រក្សាសិទ្ធិដោយក្រុមទី ៦ - និស្សិតព័ត៌មានវិទ្យា</p>
+        </div>
+    </footer>
+
+    <script>
+        // បញ្ជា Menu Mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        // មុខងារ Load វីដេអូពេលចុចលើរូបភាព
+        function loadVideo(container, videoId) {
+            container.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        }
+    </script>
+</body>
+</html>
